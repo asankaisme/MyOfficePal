@@ -23,7 +23,7 @@ class CreateLendingRegistersTable extends Migration
             $table->string('extension')->nullable();
             $table->string('lent_by')->nullable();
             $table->date('date_lent')->nullable();
-            $table->integer('status', 1)->nullable();
+            $table->string('status', 1)->nullable();
         });
     }
 

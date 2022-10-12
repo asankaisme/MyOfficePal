@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('itemName')->nullable();
             $table->string('serialNo')->nullable();
-            $table->integer('status', 1)->nullable();
+            $table->string('status', 1)->nullable();
         });
     }
 

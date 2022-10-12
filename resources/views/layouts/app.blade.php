@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @livewireStyles
 </head>
 <body>
     <div id="app">
@@ -44,7 +45,7 @@
                               Manage Master Data
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="#">Category</a>
+                              <a class="dropdown-item" href="{{ route('manageCategory') }}">Category</a>
                               <a class="dropdown-item" href="#">Departments</a>
                               <a class="dropdown-item" href="#">Users</a>
                             </div>
@@ -94,5 +95,6 @@
             @yield('content')
         </main>
     </div>
+    @livewireScripts
 </body>
 </html>

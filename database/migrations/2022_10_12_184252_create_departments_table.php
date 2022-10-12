@@ -17,7 +17,7 @@ class CreateDepartmentsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('departmentName')->nullable();
-            $table->integer('status', 1)->nullable();
+            $table->string('status', 1)->nullable();
         });
     }
 
