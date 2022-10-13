@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/manageCategory', [CategoryController::class, 'index'])->name('manageCategory');
+Route::post('/addCategory',[CategoryController::class, 'addCategory'])->name('addCategory');
+
+Route::get('/manageDepartment', [DepartmentController::class, 'index'])->name('manageDepartment');
+Route::post('/addDepartment',[DepartmentController::class, 'addDepartment'])->name('addDepartment');
