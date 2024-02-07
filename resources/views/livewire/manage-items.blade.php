@@ -18,8 +18,8 @@
                             <td style="width:1000px;">{{ $asset->assetName }}</td>
                             <td>
                                 <a href="#" ><img
-                                src="{{ asset('images/delete-svgrepo-com.svg') }}" height="15px"
-                                width="15px" alt="" title="Delete"></a>
+                                src="{{ asset('images/delete-svgrepo-com.svg') }}" height="18px"
+                                width="18px" alt="" title="Delete"></a>
                             </td>
                         </tr>
                     @endforeach

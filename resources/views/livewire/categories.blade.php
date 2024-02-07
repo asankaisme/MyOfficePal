@@ -5,13 +5,13 @@
                 <input type="submit" value="Add" class="btn btn-sm btn-outline-primary">
             </form>
         </div> --}}
-        <div style="padding-top:10px;">
-            <div class="card">
+        <div>
+            <div class="card" style="margin-top: 10px;">
                 <div class="card-header">
                     Manage Category
                 </div>
                 <div class="card-body">
-                    <table class="table table-hover table-sm table-striped">
+                    <table class="table table-hover table-sm table-striped" style="margin-top: 50px;">
                         <thead class="thead-dark">
                             <tr>
                                 <th>Category Name</th>
@@ -24,11 +24,11 @@
                                     placeholder="Search"></span>
                             @foreach ($catData as $data)
                                 <tr>
-                                    <td>{{ $data->categoryName }}</td>
+                                    <td style="width:1000px;">{{ $data->categoryName }}</td>
                                     <td>
                                         <a href="#" wire:click="deleteCategory({{ $data->id }})"><img
-                                                src="{{ asset('images/delete-svgrepo-com.svg') }}" height="20px"
-                                                width="20px" alt=""></a>
+                                                src="{{ asset('images/delete-svgrepo-com.svg') }}" height="18px"
+                                                width="18px" alt=""></a>
                                         {{-- <button class="btn btn-sm btn-danger" wire:click="delete({{ $data->id }})">Delete</button> --}}
                                     </td>
                                 </tr>

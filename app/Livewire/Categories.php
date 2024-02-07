@@ -20,7 +20,7 @@ class Categories extends Component
 
     public function render()
     {
-        $catData = Category::where('categoryName','like',"%{$this->search}%")->paginate(5);
+        $catData = Category::where('categoryName','like',"%{$this->search}%")->paginate(10);
 
         return view('livewire.categories', compact('catData'));
     }
