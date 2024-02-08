@@ -14,13 +14,15 @@ return new class extends Migration
         Schema::create('lendings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('takenBy')->nullable(); //the person from the borrowing department
             $table->foreignId('asset_id')->nullable()->constrained()->cascadeOnUpdate()->onDelete('NO ACTION');
+            $table->foreignId('department_id')->nullable()->constrained()->cascadeOnUpdate()->onDelete('NO ACTION');
             $table->date('lendingDate');
             $table->date('returnedDate');
             $table->tinyInteger('isReturned');
             $table->string('remarks');
             $table->tinyInteger('isActive');
-            });
+        });
     }
 
     /**

@@ -27,6 +27,7 @@ class AssetController extends Controller
                 $newAsset = new Asset();
                 $newAsset->assetName = $request->assetName;
                 $newAsset->faNo = $curFANo;
+                $newAsset->serialNo = $request->serialNo;
                 $newAsset->isActive = 1;
                 $newAsset->save();
                 return redirect()->route('manageItems')->with('msgSuccess', 'New asset has been recorded.');
@@ -36,5 +37,12 @@ class AssetController extends Controller
         } catch (\Throwable $th) {
             //throw $th;
         }
+    }
+
+    public function show($assetId){
+        $avlAsset = Asset::where('id', $assetId)->first();
+        // dd($avlAsset);
+        $categories = Category::where('isActive', 1)->get();
+        return view('assets.edit',compact('avlAsset', 'categories'));
     }
 }

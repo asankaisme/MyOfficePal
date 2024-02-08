@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(AssetSeeder::class);
+        $this->call(DepartmentSeeder::class);
         
-        Asset::factory(10)->create();
+        Asset::factory(28)->create();
     }
 }

@@ -9,13 +9,21 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Asset Name</th>
+                        <th>Category</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($assets as $asset)
                         <tr>
-                            <td style="width:1000px;">{{ $asset->assetName }}</td>
+                            <td style="width:60%;">{{ $asset->assetName }}</td>
+                            <td style="width:30%;">{{ $asset->category->categoryName }}</td>
+                            <td>
+                                <a href="{{ route('showAsset', $asset->id) }}" ><img
+                                src="{{ asset('images/edit-4-svgrepo-com.svg') }}" height="18px"
+                                width="18px" alt="" title="Edit"></a>
+                            </td>
                             <td>
                                 <a href="#" ><img
                                 src="{{ asset('images/delete-svgrepo-com.svg') }}" height="18px"

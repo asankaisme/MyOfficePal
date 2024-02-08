@@ -36,4 +36,5 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/addAsset',[AssetController::class, 'create'])->name('addAsset');
     Route::post('/storeAsset', [AssetController::class, 'store'])->name('storeAsset');
+    Route::get('/editAsset/{id}', [AssetController::class, 'show'])->name('showAsset');
 });

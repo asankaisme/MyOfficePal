@@ -11,7 +11,9 @@ class Lending extends Model
     use HasFactory;
 
     protected $fillable =[
+        'takenBy', //the person from the borrowing department
         'asset_id',
+        'department_id',
         'lendingDate',
         'returnedDate',
         'isReturned',
