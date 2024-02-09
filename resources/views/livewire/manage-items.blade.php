@@ -33,7 +33,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <div style="margin-top: 10px; float: right;">
+            <div style="margin-top: 10px;float:right;">
                 {{ $assets->links() }}
             </div>
             

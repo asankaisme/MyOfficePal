@@ -45,4 +45,8 @@ class AssetController extends Controller
         $categories = Category::where('isActive', 1)->get();
         return view('assets.edit',compact('avlAsset', 'categories'));
     }
+
+    public function update(AssetRequest $request, $assetId){
+
+    }
 }

@@ -28,7 +28,7 @@
                                     <label for="category">Category</label>
                                     <select name="category_id" id="category_id" class="form-control form-control-sm">
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }} {{ $avlAsset->category_id == $category->id ? 'selected' : '' }}">{{ $category->categoryName }}</option>
+                                            <option {{ $avlAsset->category_id == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->categoryName }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -43,7 +43,7 @@
                                 <div class="col">
                                     <a href="{{ route('manageItems') }}" class="btn btn-sm btn-outline-dark">Back</a>
                                     {{-- <input type="reset" value="Clear" class="btn btn-sm btn-secondary"> --}}
-                                    <input type="Update" value="Update" class="btn btn-sm btn-primary">
+                                    <input type="submit" value="Update" class="btn btn-sm btn-primary">
                                 </div>
                             </div>
                         </form>
