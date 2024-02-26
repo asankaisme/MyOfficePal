@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>@yield('title')</title>
-    @livewireStyles
 </head>
 
 <body>
@@ -119,7 +118,6 @@
             @yield('body-content')
         </main>
     </div>
-    @livewireScripts
     <script src="{{ asset('js/jquery3.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>

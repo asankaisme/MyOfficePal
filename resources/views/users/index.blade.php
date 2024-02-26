@@ -15,7 +15,6 @@
                     
                 </div>
             </div> --}}
-            @livewire('ManageUsers')
         </div>
     </div>
 </div>
