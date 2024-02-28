@@ -5,5 +5,5 @@
 @endsection
 
 @section('body-content')
-    @livewire('Dashboard')
+
 @endsection

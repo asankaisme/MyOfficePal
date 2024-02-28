@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @stack('custom-styles')
     <title>@yield('title')</title>
 </head>
 
@@ -36,9 +37,9 @@
                                 Office Administration
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('lendingAssets') }}">Letters & Memos</a>
-                                <a class="dropdown-item" href="{{ route('lendingAssets') }}">Vehicle Pass</a>
-                                <a class="dropdown-item" href="{{ route('lendingAssets') }}">Work Order Forms</a>
+                                <a class="dropdown-item" href="#">Letters & Memos</a>
+                                <a class="dropdown-item" href="#">Vehicle Pass</a>
+                                <a class="dropdown-item" href="#">Work Order Forms</a>
                             </div>
                         </li>
                         @endcan
@@ -49,7 +50,7 @@
                                     Asset Lending
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('lendingAssets') }}">Projectors & Other</a>
+                                    <a class="dropdown-item" href="#">Projectors & Other</a>
                                 </div>
                             </li>
                         @endcan
@@ -62,7 +63,7 @@
                                 @can('view_visitorPermission')
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @can('add_gatepass')
-                                            <a class="dropdown-item" href="">Gate Pass</a>
+                                            <a class="dropdown-item" href="{{ route('gatepasses.index') }}">Gate Pass</a>
                                         @endcan
                                         @can('add_visitorPermission')
                                             <a class="dropdown-item" href="#">Visitor Permission</a>
@@ -80,11 +81,11 @@
                                     Master Data
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('manageUsers') }}">Manage Users</a>
+                                    <a class="dropdown-item" href="#">Manage Users</a>
                                     <a class="dropdown-item" href="#">Roles & Permissions</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('manageItems') }}">Manage Assets</a>
-                                    <a class="dropdown-item" href="{{ route('categories') }}">Manage Categories</a>
+                                    <a class="dropdown-item" href="#">Manage Assets</a>
+                                    <a class="dropdown-item" href="#">Manage Categories</a>
                                 </div>
                             </li>
                         @endcan
@@ -121,6 +122,7 @@
     <script src="{{ asset('js/jquery3.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    @stack('footer-scripts')
 </body>
 
 </html>

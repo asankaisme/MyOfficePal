@@ -44,4 +44,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function gatePassCreatedBy(){
+        return $this->hasMany(Gatepass::class, 'createdBy');
+    }
+
+    public function gatePassAuthdBy(){
+        return $this->hasMany(Gatepass::class, 'authBy');
+    }
 }
