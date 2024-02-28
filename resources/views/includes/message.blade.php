@@ -1,5 +1,4 @@
 @if (session('msgSuccess'))
-    
     {{-- Successs message --}}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Success!</strong> {{ session('msgSuccess') }}
@@ -7,8 +6,7 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    
-@elseif (session('msgDanger'))
+@elseif(session('msgDanger'))
     {{-- Error message --}}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Failed!</strong> {{ session('msgDanger') }}
@@ -32,6 +30,4 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-@else
-
 @endif

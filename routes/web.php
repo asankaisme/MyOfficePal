@@ -1,10 +1,6 @@
 <?php
 
-use App\Http\Controllers\AssetController;
-use App\Models\Asset;
-use App\Models\User;
-use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\GatepassController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     //return view('welcome');
     return redirect()->route('login');
-});
+})->prefix('api');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/home', function () {
@@ -29,13 +25,7 @@ Route::middleware(['auth'])->group(function(){
         return view('home');
     })->name('home');
 
-    Route::view('/categories','categories.index')->name('categories');
-    Route::view('/lendingAsset', 'lendingAssets.index')->name('lendingAssets');
-    Route::view('/manageUsers', 'users.index')->name('manageUsers');
-    Route::view('/manageAssets','manageItems.index')->name('manageItems');
-
-    Route::get('/addAsset',[AssetController::class, 'create'])->name('addAsset');
-    Route::post('/storeAsset', [AssetController::class, 'store'])->name('storeAsset');
-    Route::get('/editAsset/{id}', [AssetController::class, 'show'])->name('showAsset');
-    Route::post('/updateAsset/{id}', [AssetController::class, 'update'])->name('updateAsset');
+    Route::resources([
+        'gatepasses' => GatepassController::class,
+    ]);
 });
